@@ -2,7 +2,7 @@
   "name": "fileupload",
   "version": "1.0.0",
   "description": "App to upload file to spaces",
-  "main": "app.js",
+  "main": "index.html",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
