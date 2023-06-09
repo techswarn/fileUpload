@@ -577,14 +577,14 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var _clientS3 = require("@aws-sdk/client-s3");
 var _config = require("dotenv/config");
 require("5de74e37d10d60b1").config(".env");
-console.log(undefined);
+console.log("DO00NQU8JQGM83LYDVFY");
 const s3Client = new (0, _clientS3.S3)({
     forcePathStyle: false,
     endpoint: "https://backend.nyc3.digitaloceanspaces.com",
     region: "us-east-1",
     credentials: {
-        accessKeyId: undefined,
-        secretAccessKey: undefined
+        accessKeyId: "DO00NQU8JQGM83LYDVFY",
+        secretAccessKey: "DzD3MJ+56Jyn2uKDm5IH1ZO08uuLSlVFnwFolxqDRPA"
     }
 });
 console.log(s3Client);

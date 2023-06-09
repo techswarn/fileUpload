@@ -2,18 +2,19 @@
   "name": "fileupload",
   "version": "1.0.0",
   "description": "App to upload file to spaces",
-  "main": "index.html",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "build": "parcel build index.html --dist-dir ./dist",
+    "server": "serve dist/"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.348.0",
-    "dotenv": "^16.1.4"
+    "dotenv": "^16.1.4",
+    "serve": "^14.2.0"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
