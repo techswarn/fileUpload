@@ -1,0 +1,28 @@
+{
+  "name": "fileupload",
+  "version": "1.0.0",
+  "description": "App to upload file to spaces",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.348.0"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "dotenv": "^16.1.4",
+    "events": "^3.3.0",
+    "os-browserify": "^0.3.0",
+    "parcel": "^2.0.0-beta.1",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0"
+  }
+}
