@@ -10,7 +10,7 @@ console.log(process.env.ACCESS_ID)
 
 const s3Client = new S3({
     forcePathStyle: false, // Configures to use subdomain/virtual calling format.
-    endpoint: "https://backend.nyc3.digitaloceanspaces.com",
+    endpoint: "https://nyc3.digitaloceanspaces.com",
     region: "us-east-1",
     credentials: {
       accessKeyId: process.env.ACCESS_ID,
