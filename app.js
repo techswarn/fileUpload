@@ -3,10 +3,11 @@ import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { S3 } from "@aws-sdk/client-s3";
 import 'dotenv/config'
 
-
 require('dotenv').config('.env')
 
-console.log(process.env.ACCESS_ID)
+const uploadInput = document.getElementById("uploadInput");
+const upload = document.querySelector(".form-submit")
+const alert = document.getElementById("alert-success")
 
 const s3Client = new S3({
     forcePathStyle: false, // Configures to use subdomain/virtual calling format.
@@ -17,7 +18,6 @@ const s3Client = new S3({
       secretAccessKey: process.env.ACCESS_SECRET_KEY
     }
 });
-console.log(s3Client)
 
 const createBucketParams = (file) => {
     return {
@@ -36,24 +36,30 @@ const uploadFunc = async(bucketParams) => {
             "/" +
             bucketParams.Key
         );
+        alert.classList.add("alert-success")
+        alert.innerHTML = "Successfully uploaded object: " + bucketParams.Bucket + "/" + bucketParams.Key
         return data;
       } catch (err) {
         console.log("Error", err);
+        alert.innerHTML = "Error, please check console for more details"
       }
     console.log('uploading')
 }
 
-const uploadInput = document.getElementById("uploadInput");
-const upload = document.querySelector(".form-submit")
 let files = []
 uploadInput.addEventListener(
   "change",
   () => {
     const bucketParams = createBucketParams(uploadInput.files[0].name)
     console.log(bucketParams)
-    upload.addEventListener("click", () => {
-        const res = uploadFunc(bucketParams)
-        console.log(res)
+    upload.addEventListener("click", async () => {
+        try {
+          const data = await uploadFunc(bucketParams)
+          console.log(data)
+        } catch(err) {
+          console.log(err)
+        }
+
     })
   },
   false
