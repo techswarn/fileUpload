@@ -50,9 +50,11 @@ let files = []
 uploadInput.addEventListener(
   "change",
   () => {
+    alert.classList.remove("alert-success")
+    console.log(uploadInput.files[0].name)
     const bucketParams = createBucketParams(uploadInput.files[0].name)
     console.log(bucketParams)
-    upload.addEventListener("click", async () => {
+    upload.addEventListener("click", async () => {        
         try {
           const data = await uploadFunc(bucketParams)
           console.log(data)
