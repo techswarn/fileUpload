@@ -19,11 +19,11 @@ const s3Client = new S3({
     }
 });
 
-const createBucketParams = (file) => {
+const createBucketParams = (file, content) => {
     return {
         Bucket: "backend",
         Key: file,
-        Body: "content"
+        Body: content
     }
 }
 
@@ -51,8 +51,8 @@ uploadInput.addEventListener(
   "change",
   () => {
     alert.classList.remove("alert-success")
-    console.log(uploadInput.files[0].name)
-    const bucketParams = createBucketParams(uploadInput.files[0].name)
+    console.log(uploadInput.files[0])
+    const bucketParams = createBucketParams(uploadInput.files[0].name, uploadInput.files[0] )
     console.log(bucketParams)
     upload.addEventListener("click", async () => {        
         try {
