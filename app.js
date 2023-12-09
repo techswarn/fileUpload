@@ -28,9 +28,6 @@ const createBucketParams = (file, content) => {
 
 const uploadFunc = async (bucketParams) => {
   try {
-    if (uploadInput.files[0].name === null) {
-      console.log("Please choose file");
-    }
     const data = await s3Client.send(new PutObjectCommand(bucketParams));
     console.log(
       "Successfully uploaded object: " +
@@ -65,6 +62,10 @@ uploadInput.addEventListener(
     console.log(bucketParams);
     upload.addEventListener("click", async () => {
       try {
+        if (!uploadInput.files[0].name) {
+          console.log("Please choose the file");
+        }
+        console.log("submit");
         const data = await uploadFunc(bucketParams);
         console.log(data);
       } catch (err) {

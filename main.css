@@ -39,6 +39,10 @@ h1 {
   background-color: #37b24d;
 }
 
+.form-submit:hover {
+  background-color: #2f9e44;
+}
+
 .upload-container {
   width: 900px;
   height: 300px;
